@@ -1,6 +1,7 @@
 name: Download Metrics
 on:
   workflow_dispatch:
+    branches: [main]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
