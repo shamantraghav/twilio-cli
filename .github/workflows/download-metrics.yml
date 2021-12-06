@@ -1,9 +1,0 @@
-name: Download Metrics
-on:
-  workflow_dispatch:
-    branches: [main]
-jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
