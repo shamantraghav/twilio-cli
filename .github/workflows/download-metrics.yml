@@ -14,10 +14,10 @@ jobs:
           api-key: ${{ secrets.DATADOG_API_KEY }}
           metrics: |
             - type: "count"
-              name: "test.runs.count"
-              value: 1.0
+              name: "twilio-2.36.0-1.el8.x86_64.rpm"
+              value: 1
+              name: "twilio-2.36.0.deb"
+              value: 4
               host: ${{ github.repository_owner }}
               tags:
                 - "project:${{ github.repository }}"
-                - "branch:${{ github.head_ref }}"
-
