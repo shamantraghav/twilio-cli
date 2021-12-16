@@ -14,13 +14,13 @@ jobs:
           api-key: ${{ secrets.DATADOG_API_KEY }}
           metrics: |
             - type: "count"
-              name: "twilio-2.36.0-1.el8.x86_64.rpm"
+              name: "dowloands.latest_release.count"
               value: 1
               host: ${{ github.repository_owner }}
               tags:
                 - "project:${{ github.repository }}"
             - type: "count"
-              name: "twilio-2.36.0.deb"
+              name: "dowloands.second_latest_release.count"
               value: 4
               host: ${{ github.repository_owner }}
               tags:
