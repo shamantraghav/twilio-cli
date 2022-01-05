@@ -1,0 +1,21 @@
+name: NPM Download Metrics
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run a one-line script
+        uses: masci/datadog@v1
+        with:
+          api-key: ${{ secrets.DATADOG_API_KEY }}
+          metrics: |
+            - type: "count"
+              name: "downloads.npm_release1.count"
+              value: 598
+              host: ${{ github.repository_owner }}
+              tags:
+                - "project:${{ github.repository }}"
