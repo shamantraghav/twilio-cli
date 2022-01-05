@@ -15,7 +15,7 @@ jobs:
           metrics: |
             - type: "count"
               name: "downloads.npm_release1.count"
-              value: 598
+              value: 958
               host: ${{ github.repository_owner }}
               tags:
                 - "project:${{ github.repository }}"
