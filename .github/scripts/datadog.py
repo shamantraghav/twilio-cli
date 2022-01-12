@@ -13,8 +13,8 @@ import requests
 
 today = datetime.today()
 yesterday = today - timedelta(days = 1)
-final_yesterday= yesterday.strftime('%Y-%m-%d')
-npm_url="https://api.npmjs.org/downloads/point/"+final_yesterday+"/twilio-cli"
+yesterday_url_format= yesterday.strftime('%Y-%m-%d')
+npm_url="https://api.npmjs.org/downloads/point/"+yesterday_url_format+"/twilio-cli"
 
 response = requests.get(npm_url)
 download_count=response.json()
