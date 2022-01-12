@@ -26,7 +26,8 @@ jobs:
         with:
           python-version: 3.8 #install the python needed
       - name: execute py script # run the run.py to get the latest data
+        env:
+          DD_SITE: datadoghq.com
+          DD_API_KEY: ${{ secrets.DATADOG_API_KEY }}   
         run: |
-          DD_SITE="datadoghq.com"
-          DD_API_KEY= ${{ secrets.DATADOG_API_KEY }}
           python3 .github/scripts/datadog.py
