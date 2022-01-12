@@ -30,4 +30,5 @@ jobs:
           DD_SITE: datadoghq.com
           DD_API_KEY: ${{ secrets.DATADOG_API_KEY }}   
         run: |
+          pip3 install datadog-api-client
           python3 .github/scripts/datadog.py
