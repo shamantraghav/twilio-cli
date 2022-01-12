@@ -20,7 +20,7 @@ jobs:
       #         tags:
       #           - "project:${{ github.repository }}"
       - name: Run a one-line script
-        uses: masci/datadog@v1
+        uses: actions/checkout@v2
       - name: setup python
         uses: actions/setup-python@v2
         with:
@@ -28,5 +28,5 @@ jobs:
       - name: execute py script # run the run.py to get the latest data
         run: |
           export DD_SITE="datadoghq.com"
-          DD_API_KEY=${{ secrets.DATADOG_API_KEY }}
-          python3 "datadog.py"
+          DD_API_KEY= ${{ secrets.DATADOG_API_KEY }}
+          python3 .github/scripts/datadog.py
