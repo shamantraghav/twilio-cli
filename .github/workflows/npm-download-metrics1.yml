@@ -8,14 +8,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # - name: Run a one-line script
+      #   uses: masci/datadog@v1
+      #   with:
+      #     api-key: ${{ secrets.DATADOG_API_KEY }}
+      #     metrics: |
+      #       - type: "count"
+      #         name: "downloads.npm_release1.count"
+      #         value: 958
+      #         host: ${{ github.repository_owner }}
+      #         tags:
+      #           - "project:${{ github.repository }}"
       - name: Run a one-line script
         uses: masci/datadog@v1
+      - name: setup python
+        uses: actions/setup-python@v2
         with:
-          api-key: ${{ secrets.DATADOG_API_KEY }}
-          metrics: |
-            - type: "count"
-              name: "downloads.npm_release1.count"
-              value: 958
-              host: ${{ github.repository_owner }}
-              tags:
-                - "project:${{ github.repository }}"
+          python-version: 3.8 #install the python needed
+      - name: execute py script # run the run.py to get the latest data
+        run: |
+          export DD_SITE="datadoghq.com"
+          DD_API_KEY=${{ secrets.DATADOG_API_KEY }}
+          python3 "datadog.py"
