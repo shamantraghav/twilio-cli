@@ -1,7 +1,7 @@
 name: NPM Download Metrics
 
 on:
-  workflow_dispatch:
+  # workflow_dispatch:
   schedule:
     # - cron: "0 0 * * *" #runs at 00:00 UTC everyday
     - cron: "*/5 * * * *" #runs at 00:00 UTC everyday   
