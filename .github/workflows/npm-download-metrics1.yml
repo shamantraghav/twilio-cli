@@ -31,4 +31,6 @@ jobs:
           DD_API_KEY: ${{ secrets.DATADOG_API_KEY }}   
         run: |
           pip3 install datadog-api-client
+          pip3 install requests
+          pip3 install datetime
           python3 .github/scripts/datadog.py
