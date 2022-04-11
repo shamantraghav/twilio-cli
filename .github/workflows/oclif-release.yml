@@ -10,10 +10,10 @@ on:
         required: true
       formula:
           description: 'Formula to release in homebrew'
-          default: twilio
+          default: twiliodraft
       pre-release:
         description: 'Homebrew release type'
-        default: 'false'
+        default: 'true'
 jobs:
   oclif-release:
     name: Publish for ${{ matrix.os }}
