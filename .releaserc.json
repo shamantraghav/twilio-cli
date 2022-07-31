@@ -62,7 +62,12 @@
         "changelogFile": "CHANGES.md"
       }
     ],
+    [
       "@semantic-release/npm",
+      {
+        "npmPublish": false
+      }
+    ],
     [
       "@semantic-release/github",
       {
